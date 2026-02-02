@@ -1,0 +1,5 @@
+com\daw2\LibraryDAW\LibraryDawApplication.class
+com\daw2\LibraryDAW\model\Book.class
+com\daw2\LibraryDAW\service\BookService.class
+com\daw2\LibraryDAW\repository\BookRepository.class
+com\daw2\LibraryDAW\controller\BookController.class
