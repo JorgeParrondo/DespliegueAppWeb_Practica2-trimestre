@@ -14,11 +14,14 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     
     List<Book> findByAuthor(String author);
     
+    List<Book> findByTitleAndAuthor(String title, String author);
+    
     List<Book> findByGenre(String genre);
     
     List<Book> findByYear(Integer year);
     
     List<Book> findByTitleContainingIgnoreCase(String title);
+    
     
     @Query("SELECT b FROM Book b WHERE b.year BETWEEN :startYear AND :endYear")
     List<Book> findBooksByYearRange(@Param("startYear") Integer startYear, 

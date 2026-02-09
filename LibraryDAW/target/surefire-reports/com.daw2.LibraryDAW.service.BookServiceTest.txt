@@ -1,0 +1,44 @@
+-------------------------------------------------------------------------------
+Test set: com.daw2.LibraryDAW.service.BookServiceTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.822 s <<< FAILURE! -- in com.daw2.LibraryDAW.service.BookServiceTest
+com.daw2.LibraryDAW.service.BookServiceTest.createBook_ShouldCheckForDuplicateBeforeSaving -- Time elapsed: 0.748 s <<< FAILURE!
+Wanted but not invoked:
+bookRepository.save(
+    com.daw2.LibraryDAW.model.Book@411b4a70
+);
+-> at com.daw2.LibraryDAW.service.BookServiceTest.createBook_ShouldCheckForDuplicateBeforeSaving(BookServiceTest.java:101)
+
+However, there was exactly 1 interaction with this mock:
+bookRepository.findByTitleAndAuthor(
+    "Rayuela",
+    "Cortázar"
+);
+-> at com.daw2.LibraryDAW.service.BookService.createBook(BookService.java:31)
+
+
+	at com.daw2.LibraryDAW.service.BookServiceTest.createBook_ShouldCheckForDuplicateBeforeSaving(BookServiceTest.java:101)
+
+com.daw2.LibraryDAW.service.BookServiceTest.createBook_WhenBookDoesNotExist_ShouldSaveBook -- Time elapsed: 0.033 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertNotNull.failNull(AssertNotNull.java:55)
+	at org.junit.jupiter.api.AssertNotNull.assertNotNull(AssertNotNull.java:40)
+	at org.junit.jupiter.api.AssertNotNull.assertNotNull(AssertNotNull.java:34)
+	at org.junit.jupiter.api.Assertions.assertNotNull(Assertions.java:325)
+	at com.daw2.LibraryDAW.service.BookServiceTest.createBook_WhenBookDoesNotExist_ShouldSaveBook(BookServiceTest.java:56)
+
+com.daw2.LibraryDAW.service.BookServiceTest.createBook_WhenBookAlreadyExists_ShouldReturnNull -- Time elapsed: 0.016 s <<< FAILURE!
+org.mockito.exceptions.verification.NeverWantedButInvoked: 
+
+bookRepository.save(
+    com.daw2.LibraryDAW.model.Book@3aee98e7
+);
+Never wanted here:
+-> at com.daw2.LibraryDAW.service.BookServiceTest.createBook_WhenBookAlreadyExists_ShouldReturnNull(BookServiceTest.java:80)
+But invoked here:
+-> at com.daw2.LibraryDAW.service.BookService.createBook(BookService.java:36) with arguments: [com.daw2.LibraryDAW.model.Book@3aee98e7]
+
+	at com.daw2.LibraryDAW.service.BookServiceTest.createBook_WhenBookAlreadyExists_ShouldReturnNull(BookServiceTest.java:80)
+

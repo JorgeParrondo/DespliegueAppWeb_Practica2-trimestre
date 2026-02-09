@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.daw2.LibraryDAW.LibraryDawApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.223 s -- in com.daw2.LibraryDAW.LibraryDawApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.42 s -- in com.daw2.LibraryDAW.LibraryDawApplicationTests

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.daw2.LibraryDAW.LibraryDawApplicationTests" time="11.42" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.daw2.LibraryDAW.service.BookServiceTest" time="0.822" tests="3" errors="0" skipped="0" failures="3">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -68,53 +68,51 @@
     <property name="java.class.version" value="67.0"/>
     <property name="LOGGED_APPLICATION_NAME" value="[LibraryDAW] "/>
   </properties>
-  <testcase name="contextLoads" classname="com.daw2.LibraryDAW.LibraryDawApplicationTests" time="0.877">
-    <system-out><![CDATA[12:41:09.153 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.daw2.LibraryDAW.LibraryDawApplicationTests]: LibraryDawApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-12:41:09.366 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.daw2.LibraryDAW.LibraryDawApplication for test class com.daw2.LibraryDAW.LibraryDawApplicationTests
+  <testcase name="createBook_ShouldCheckForDuplicateBeforeSaving" classname="com.daw2.LibraryDAW.service.BookServiceTest" time="0.748">
+    <failure message="&#10;Wanted but not invoked:&#10;bookRepository.save(&#10;    com.daw2.LibraryDAW.model.Book@411b4a70&#10;);&#10;-&gt; at com.daw2.LibraryDAW.service.BookServiceTest.createBook_ShouldCheckForDuplicateBeforeSaving(BookServiceTest.java:101)&#10;&#10;However, there was exactly 1 interaction with this mock:&#10;bookRepository.findByTitleAndAuthor(&#10;    &quot;Rayuela&quot;,&#10;    &quot;Cortázar&quot;&#10;);&#10;-&gt; at com.daw2.LibraryDAW.service.BookService.createBook(BookService.java:31)&#10;&#10;" type="Wanted but not invoked"><![CDATA[Wanted but not invoked:
+bookRepository.save(
+    com.daw2.LibraryDAW.model.Book@411b4a70
+);
+-> at com.daw2.LibraryDAW.service.BookServiceTest.createBook_ShouldCheckForDuplicateBeforeSaving(BookServiceTest.java:101)
 
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
+However, there was exactly 1 interaction with this mock:
+bookRepository.findByTitleAndAuthor(
+    "Rayuela",
+    "Cortázar"
+);
+-> at com.daw2.LibraryDAW.service.BookService.createBook(BookService.java:31)
 
- :: Spring Boot ::                (v4.0.1)
 
-2026-02-09T12:41:10.454+01:00  INFO 13768 --- [LibraryDAW] [           main] c.d.L.LibraryDawApplicationTests         : Starting LibraryDawApplicationTests using Java 23.0.2 with PID 13768 (started by Usuario in C:\Users\Usuario\git\Despliegue\LibraryDAW)
-2026-02-09T12:41:10.457+01:00  INFO 13768 --- [LibraryDAW] [           main] c.d.L.LibraryDawApplicationTests         : No active profile set, falling back to 1 default profile: "default"
-2026-02-09T12:41:11.243+01:00  INFO 13768 --- [LibraryDAW] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-02-09T12:41:11.320+01:00  INFO 13768 --- [LibraryDAW] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 1 JPA repository interface.
-2026-02-09T12:41:11.900+01:00  INFO 13768 --- [LibraryDAW] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-02-09T12:41:12.019+01:00  INFO 13768 --- [LibraryDAW] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.0.Final
-2026-02-09T12:41:12.923+01:00  INFO 13768 --- [LibraryDAW] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-02-09T12:41:12.997+01:00  INFO 13768 --- [LibraryDAW] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-02-09T12:41:13.856+01:00  INFO 13768 --- [LibraryDAW] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7474196
-2026-02-09T12:41:13.859+01:00  INFO 13768 --- [LibraryDAW] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-02-09T12:41:14.146+01:00  WARN 13768 --- [LibraryDAW] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-02-09T12:41:14.190+01:00  INFO 13768 --- [LibraryDAW] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3307/bookdb]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.45
-	Default catalog/schema: bookdb/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-02-09T12:41:15.890+01:00  INFO 13768 --- [LibraryDAW] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-02-09T12:41:16.148+01:00  INFO 13768 --- [LibraryDAW] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-02-09T12:41:16.346+01:00  INFO 13768 --- [LibraryDAW] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-02-09T12:41:17.940+01:00  WARN 13768 --- [LibraryDAW] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-02-09T12:41:19.279+01:00  INFO 13768 --- [LibraryDAW] [           main] c.d.L.LibraryDawApplicationTests         : Started LibraryDawApplicationTests in 9.533 seconds (process running for 12.383)
+	at com.daw2.LibraryDAW.service.BookServiceTest.createBook_ShouldCheckForDuplicateBeforeSaving(BookServiceTest.java:101)
+]]></failure>
+    <system-out><![CDATA[Ya existe un libro con este titulo y author
 ]]></system-out>
-    <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
-WARNING: A Java agent has been loaded dynamically (C:\Users\Usuario\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.8\byte-buddy-agent-1.17.8.jar)
-WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
-WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
-WARNING: Dynamic loading of agents will be disallowed by default in a future release
-]]></system-err>
+  </testcase>
+  <testcase name="createBook_WhenBookDoesNotExist_ShouldSaveBook" classname="com.daw2.LibraryDAW.service.BookServiceTest" time="0.033">
+    <failure message="expected: not &lt;null&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: not <null>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertNotNull.failNull(AssertNotNull.java:55)
+	at org.junit.jupiter.api.AssertNotNull.assertNotNull(AssertNotNull.java:40)
+	at org.junit.jupiter.api.AssertNotNull.assertNotNull(AssertNotNull.java:34)
+	at org.junit.jupiter.api.Assertions.assertNotNull(Assertions.java:325)
+	at com.daw2.LibraryDAW.service.BookServiceTest.createBook_WhenBookDoesNotExist_ShouldSaveBook(BookServiceTest.java:56)
+]]></failure>
+    <system-out><![CDATA[Ya existe un libro con este titulo y author
+]]></system-out>
+  </testcase>
+  <testcase name="createBook_WhenBookAlreadyExists_ShouldReturnNull" classname="com.daw2.LibraryDAW.service.BookServiceTest" time="0.016">
+    <failure message="&#10;bookRepository.save(&#10;    com.daw2.LibraryDAW.model.Book@3aee98e7&#10;);&#10;Never wanted here:&#10;-&gt; at com.daw2.LibraryDAW.service.BookServiceTest.createBook_WhenBookAlreadyExists_ShouldReturnNull(BookServiceTest.java:80)&#10;But invoked here:&#10;-&gt; at com.daw2.LibraryDAW.service.BookService.createBook(BookService.java:36) with arguments: [com.daw2.LibraryDAW.model.Book@3aee98e7]&#10;" type="org.mockito.exceptions.verification.NeverWantedButInvoked"><![CDATA[org.mockito.exceptions.verification.NeverWantedButInvoked: 
+
+bookRepository.save(
+    com.daw2.LibraryDAW.model.Book@3aee98e7
+);
+Never wanted here:
+-> at com.daw2.LibraryDAW.service.BookServiceTest.createBook_WhenBookAlreadyExists_ShouldReturnNull(BookServiceTest.java:80)
+But invoked here:
+-> at com.daw2.LibraryDAW.service.BookService.createBook(BookService.java:36) with arguments: [com.daw2.LibraryDAW.model.Book@3aee98e7]
+
+	at com.daw2.LibraryDAW.service.BookServiceTest.createBook_WhenBookAlreadyExists_ShouldReturnNull(BookServiceTest.java:80)
+]]></failure>
   </testcase>
 </testsuite>
